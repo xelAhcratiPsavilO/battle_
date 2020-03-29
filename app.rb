@@ -3,7 +3,10 @@ require './lib/game'
 require './lib/player'
 
 class Battle < Sinatra::Base
-  enable :sessions
+
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     erb :index
@@ -17,12 +20,10 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
-    @game = Game.instance
     erb :play
   end
 
   post '/attack' do
-    @game = Game.instance
     @game.attack(@game.awaiting_turn)
     @game.switch_turns
     if @game.game_over?
@@ -33,12 +34,10 @@ class Battle < Sinatra::Base
   end
 
   get '/attack' do
-    @game = Game.instance
     erb :attack
   end
 
   get '/game-over' do
-    @game = Game.instance
     erb :game_over
   end
 
