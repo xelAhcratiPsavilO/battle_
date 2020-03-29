@@ -7,6 +7,7 @@
   <body>
     <%= @game.awaiting_turn.name %> attacked <%= @game.current_turn.name %>
     <br>
+    <br>
     <%= @game.current_turn.name %>: <%= @game.current_turn.hit_points%>HP
 
     <a href="/play">OK</a>
