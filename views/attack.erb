@@ -5,9 +5,9 @@
     <title></title>
   </head>
   <body>
-    <%= @game.player_1.name %> attacked <%= @game.player_2.name %>
+    <%= @game.awaiting_turn.name %> attacked <%= @game.current_turn.name %>
     <br>
-    <%= @game.player_2.name %>: <%= @game.player_2.hit_points%>HP
+    <%= @game.current_turn.name %>: <%= @game.current_turn.hit_points%>HP
 
     <a href="/play">OK</a>
   </body>

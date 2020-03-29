@@ -30,11 +30,11 @@ describe Game do
     end
   end
 
-  describe '#awaiting_turn' do
-    it 'starts as player 2' do
-      expect(game.awaiting_turn).to eq player_2
-    end
-  end
+  # describe '#awaiting_turn' do
+  #   it 'starts as player 2' do
+  #     expect(game.awaiting_turn).to eq player_2
+  #   end
+  # end
 
   describe '#switch_turns' do
     it 'switches the turn' do
