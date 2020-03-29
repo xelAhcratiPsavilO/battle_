@@ -18,4 +18,12 @@ feature 'Attacking' do
     expect(page).not_to have_content 'Alex: 60HP'
     expect(page).to have_content 'Alex: 50HP'
   end
+
+  scenario 'reduce Player 1 HP by 10' do
+    sign_in_and_play
+    play_one_turn
+    click_link 'Attack'
+    expect(page).not_to have_content 'Christina: 60HP'
+    expect(page).to have_content 'Christina: 50HP'
+  end
 end
