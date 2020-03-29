@@ -7,8 +7,7 @@ feature 'Switch turns' do
 
     scenario 'after player 1 attacks' do
       sign_in_and_play
-      click_link 'Attack'
-      click_link 'OK'
+      play_one_turn
       expect(page).not_to have_content "Christina's turn"
       expect(page).to have_content "Alex's turn"
     end

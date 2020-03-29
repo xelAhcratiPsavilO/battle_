@@ -5,6 +5,13 @@ feature 'Attacking' do
     expect(page).to have_content 'Christina attacked Alex'
   end
 
+  scenario 'attack Player 1' do
+    sign_in_and_play
+    play_one_turn
+    click_link 'Attack'
+    expect(page).to have_content 'Alex attacked Christina'
+  end
+
   scenario 'reduce Player 2 HP by 10' do
     sign_in_and_play
     click_link 'Attack'
