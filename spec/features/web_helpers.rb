@@ -6,6 +6,6 @@ def sign_in_and_play
 end
 
 def play_one_turn
-  click_link 'Attack'
+  click_button 'Attack'
   click_link 'OK'
 end

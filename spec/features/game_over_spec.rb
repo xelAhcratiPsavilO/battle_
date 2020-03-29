@@ -1,15 +1,16 @@
 
 feature 'Game over' do
-  context 'when Player 1 reaches 0 HP first' do
+  context 'when a Player reaches 0 HP' do
     before do
       sign_in_and_play
-      play_one_turn
-      allow(Kernel).to receive(:rand).and_return(60)
+      10.times do
+        play_one_turn
+      end
     end
 
-    scenario 'Player 1 loses' do
+    scenario 'that Player loses' do
       click_button 'Attack'
-      expect(page).to have_content 'Christina loses!'
+      expect(page).to have_content 'Alex loses!'
     end
   end
 end
