@@ -6,6 +6,7 @@ def sign_in_and_play
 end
 
 def play_one_turn
+  before { srand(1) }
   click_button 'Attack'
   click_link 'OK'
 end
