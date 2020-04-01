@@ -23,9 +23,9 @@ describe Player do
   end
 
   describe '#receive_random_damage' do
+    before { srand(3) }
     it 'reduces the player hit points' do
-      before { srand(2) }
-      expect { alex.receive_damage }.to change { alex.hit_points }.by(-20)
+      expect { alex.receive_randome_damage }.to change { alex.hit_points }.by(-20)
     end
   end
 

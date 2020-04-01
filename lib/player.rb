@@ -12,4 +12,8 @@ class Player
     @hit_points -=10
   end
 
+  def receive_randome_damage
+    @hit_points -=(rand(3) * 10)
+  end
+
 end
