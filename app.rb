@@ -29,12 +29,22 @@ class Battle < Sinatra::Base
     if @game.game_over?
       redirect '/game-over'
     else
-      redirect '/attack'
+      redirect '/attacked'
     end
   end
 
-  get '/attack' do
-    erb :attack
+  post '/random_attack' do
+    @game.random_attack(@game.awaiting_turn)
+    @game.switch_turns
+    if @game.game_over?
+      redirect '/game-over'
+    else
+      redirect '/attacked'
+    end
+  end
+
+  get '/attacked' do
+    erb :attacked
   end
 
   get '/game-over' do

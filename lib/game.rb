@@ -20,6 +20,10 @@ class Game
     player.receive_damage
   end
 
+  def random_attack(player)
+    player.receive_random_damage
+  end
+
   def player_1
     @players.first
   end
